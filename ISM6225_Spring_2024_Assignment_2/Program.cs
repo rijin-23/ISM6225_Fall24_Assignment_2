@@ -62,8 +62,19 @@ namespace Assignment_2
         {
             try
             {
-                // Write your code here
-                return new List<int>(); // Placeholder
+				List<int> newList = new List<int>();
+                Dictionary<int,int> newDict = new Dictionary<int,int>();
+                for(int i = 0; i < nums.Length; i++){
+					if (!newDict.ContainsKey(nums[i])){
+						newDict.Add(nums[i],1);
+					}
+				}
+				for(int i = 1; i<=nums.Length; i++){
+					if(!newDict.ContainsKey(i)){
+						newList.Add(i);
+					}
+				}
+                return newList; // Placeholder
             }
             catch (Exception)
             {
@@ -76,8 +87,28 @@ namespace Assignment_2
         {
             try
             {
-                // Write your code here
-                return new int[0]; // Placeholder
+				int i = 0;
+				int j = 0;
+				while(i < nums.Length){
+					if(nums[i]%2==0){
+						if(i!=j){
+							int temp = 0;
+							temp = nums[i];
+							nums[i] = nums[j];
+							nums[j] = temp;
+							i++;
+							j++;
+						}
+						else{
+							i++;
+							j++;
+						}
+					}
+					else{
+						i++;
+					}
+				}
+                return nums; // Placeholder
             }
             catch (Exception)
             {
@@ -89,9 +120,21 @@ namespace Assignment_2
         public static int[] TwoSum(int[] nums, int target)
         {
             try
-            {
-                // Write your code here
-                return new int[0]; // Placeholder
+            {	
+				List<int> resList = new List<int>();
+				Dictionary<int, int> newDict = new Dictionary<int,int>();
+				for(int i = 0; i < nums.Length; i++){
+					if(!newDict.ContainsKey(target - nums[i])){
+						newDict.Add(nums[i],i);
+					}
+					else{
+						Console.WriteLine(newDict[target-nums[i]]);
+						resList.Add(newDict[target-nums[i]]);
+						resList.Add(i);
+						return resList.ToArray();
+					}
+				}
+				return resList.ToArray();
             }
             catch (Exception)
             {
@@ -104,8 +147,45 @@ namespace Assignment_2
         {
             try
             {
-                // Write your code here
-                return 0; // Placeholder
+				int lowest = int.MaxValue;
+				int second_lowest = int.MaxValue;
+				int highest = int.MinValue;
+				int second_highest = int.MinValue;
+				int third_highest = int.MinValue;
+				for(int i = 0; i < nums.Length; i++){
+					if(nums[i] <= lowest){
+						second_lowest = lowest;
+						lowest = nums[i];
+					}
+					else{
+						if(nums[i] <= second_lowest){
+							second_lowest = nums[i];
+						}
+					}
+					
+					if(nums[i] >= highest){
+						third_highest = second_highest;
+						second_highest = highest;
+						highest = nums[i];
+					}
+					else{
+						if(nums[i] >= second_highest){
+							third_highest = second_highest;
+							second_highest = nums[i];
+						}
+						else{
+							if(nums[i] >= third_highest){
+								third_highest = nums[i];
+							}
+						}
+					}
+				}
+				if(lowest*second_lowest*highest > highest*second_highest*third_highest){
+					return lowest*second_lowest*highest;
+				}
+				else{
+                return highest*second_highest*third_highest;
+				} // Placeholder
             }
             catch (Exception)
             {
@@ -118,8 +198,12 @@ namespace Assignment_2
         {
             try
             {
-                // Write your code here
-                return "101010"; // Placeholder
+                string res = string.Empty;
+				while(decimalNumber > 0){
+					res = decimalNumber%2 + res;
+					decimalNumber = decimalNumber/2;
+				}
+                return res; // Placeholder
             }
             catch (Exception)
             {
@@ -132,8 +216,14 @@ namespace Assignment_2
         {
             try
             {
-                // Write your code here
-                return 0; // Placeholder
+				int min = int.MaxValue;
+				for(int i = 0; i < nums.Length; i++){
+					if(nums[i] < min){
+						min = nums[i];
+					}
+				}
+				
+                return min; // Placeholder
             }
             catch (Exception)
             {
@@ -146,8 +236,16 @@ namespace Assignment_2
         {
             try
             {
-                // Write your code here
-                return false; // Placeholder
+				if(x==0){
+					return true;
+				}
+				int org = x;
+				string res = string.Empty;
+				while(org>0){
+					res += org%10;
+					org/=10;
+				}
+                return (res == Convert.ToString(x)); // Placeholder
             }
             catch (Exception)
             {
@@ -160,8 +258,12 @@ namespace Assignment_2
         {
             try
             {
-                // Write your code here
-                return 0; // Placeholder
+                if(n<=1){
+					return n;
+				}
+				else{
+                return Fibonacci(n-1) + Fibonacci(n-2);
+				}; // Placeholder
             }
             catch (Exception)
             {
