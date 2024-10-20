@@ -70,6 +70,8 @@ namespace Assignment_2
             will check if any number is missing from the Dictionary. The missing numbers will
             then be appended to a list and at the end of the program, this list is returned. 
 
+            Self reflection: I've done this in Python already but this helped understand C# syntax
+
             Time Complexity: O(n)
             */
             try
@@ -106,6 +108,9 @@ namespace Assignment_2
             array is an even number but i and j are same, then that element is skipped, meaning 
             it's already sorted. If the element is an even number but i and j are not the same, then
             the elements at the position i and j are swapped.
+
+            Self Reflection: If visualization in your mind is not good, especially for two pointers, then
+            draw it on notebook and then try.
 
             Time Complexity: O(n)
             */
@@ -152,6 +157,8 @@ namespace Assignment_2
             does exist in the dictionary, index(v) for difference(k) is appended to a list and then
             the current index of the element is also added to the list which is then returned.
 
+            Self reflection: Always use a dictionary to keep track of elements.
+
             Time Complexity: O(n)
             */
             try
@@ -189,6 +196,10 @@ namespace Assignment_2
             we need to check the product of lowest, second lowest and the highest and compare it with
             the product of highest, second highest and third highest. Whichever produces the higher result
             will then be returned.
+
+            Self reflection: The initial logic of sorting is good but will take more time complexity. Hence,
+            this approach of finding the min and max of elements is much more optimized. Again, if confused use
+            a notebook to figure out the logic.
 
             Time Complexity: O(n)
             */
@@ -250,6 +261,9 @@ namespace Assignment_2
             to a string, then divide the number by 2. Keep on doing this until the number is
             greater than 0. Then return the number.
 
+            Self reflection: This was an easy one, just remember we can use res = num%2 + res, whereas
+            what I usually do is res+=num%2 and then reverse the entire string.
+
             Time Complexity: O(n)
             */
             try
@@ -275,6 +289,10 @@ namespace Assignment_2
 
             I know the original question on leetcode says to achieve this in O(log n) time complexity
             but I'm still working on that logic. For now, I'm just finding the minimum element in the list.
+
+            Self reflection: I need to figure out how to solve it using O(log n) time complexity. I know
+            where to start, all I need to find is the point where there's a variation in number sorting in
+            the list and then divide the list to find the min.
 
             Time Complexity: O(n)
             */
@@ -306,6 +324,8 @@ namespace Assignment_2
             . One thing is to store the initial number to a variable for comparison. Then 
             compare the result and the initial number, return True if matches, else False. 
 
+            Self reflection: Same as the binary one.
+
             Time Complexity: O(n)
             */
             try
@@ -336,6 +356,9 @@ namespace Assignment_2
             Used recursion for solving this problem. The program will recursively call the 
             function to calculate the fibonacci number. When the number is 1, the value of
             the Fibonacci is returned.
+
+            Self reflection: Recursion is confusing. You need to have a good understanding of your logic and the
+            problem. I need to solve a lot more questions on recursion.
 
             Time Complexity: O(2^n).
             */
